@@ -181,8 +181,8 @@ const SITE = {
   /* ---------- Header ---------- */
   name:  "Connor Wagaman",
   email: "[mylastname] [at] bu.edu",
-  photo:      "index_files/image001-small.jpg",  // low-res, shown in browser
-  photoHires: "index_files/image001.jpg",         // hi-res, seen by crawlers & downloaded on right-click
+  photo:      "index_files/image001-small.jpg",  // low-res, shown instantly in browser
+  photoHires: "index_files/image001.jpg",         // hi-res, seen by crawlers; loads in background
 
   /* ---------- Links (shown as buttons next to Google Scholar) ----------
      Add or remove objects from this array.
@@ -377,18 +377,15 @@ function render() {
 
 render();
 
-// Swap in low-res for display; hi-res stays in the DOM for crawlers
+// Blur-up: hi-res is in the src for crawlers; swap to low-res instantly for fast display,
+// then load hi-res in the background and swap back in once ready.
 const el = document.getElementById('profile-photo');
 el.src = SITE.photo;
-
-// Right-click downloads hi-res
-el.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-  const a = document.createElement('a');
-  a.href = SITE.photoHires;
-  a.download = 'connor-wagaman.jpg';
-  a.click();
-});
+el.style.filter = 'blur(6px)';
+el.style.transition = 'filter 0.4s';
+const hires = new Image();
+hires.src = SITE.photoHires;
+hires.onload = () => { el.src = SITE.photoHires; el.style.filter = 'none'; };
 </script>
 </body>
 </html>
