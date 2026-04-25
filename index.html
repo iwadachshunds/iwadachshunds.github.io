@@ -60,7 +60,8 @@ const SITE = {
   /* ---------- Header ---------- */
   name:  "Connor Wagaman",
   email: "[mylastname] [at] bu.edu",
-  photo: "index_files/image001.jpg",   // path to your photo
+  photo:       "index_files/image001-small.jpg",  // low-res, actually loaded
+  photoHires:  "index_files/image001.jpg",         // hi-res, only downloaded on right-click
 
   /* ---------- Links (shown as buttons next to Google Scholar) ----------
      Add or remove objects from this array.
@@ -388,6 +389,14 @@ function render() {
     <footer>${esc(myName)} &middot; Boston University</footer>
   `;
 }
+
+document.getElementById('profile-photo').addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  const a = document.createElement('a');
+  a.href = SITE.photoHires;
+  a.download = 'connor-wagaman.jpg';
+  a.click();
+});
 
 render();
 </script>
