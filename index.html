@@ -31,105 +31,106 @@
       background: var(--bg);
       color: var(--ink);
       font-family: var(--font-body);
-      font-size: 17px;
-      line-height: 1.72;
+      font-size: 16px;
+      line-height: 1.65;
       min-height: 100vh;
     }
 
-    .page { max-width: 780px; margin: 0 auto; padding: 64px 32px 120px; }
+    /* wider, tighter page */
+    .page { max-width: 980px; margin: 0 auto; padding: 48px 40px 100px; }
 
     /* Header */
     .header {
-      display: flex; align-items: flex-start; gap: 36px;
-      margin-bottom: 48px; padding: 40px 40px 36px;
+      display: flex; align-items: flex-start; gap: 30px;
+      margin-bottom: 36px; padding: 32px 36px 28px;
       background: var(--accent); border-radius: 6px;
     }
     .header-photo {
-      width: 110px; height: 110px; border-radius: 50%; object-fit: cover;
+      width: 96px; height: 96px; border-radius: 50%; object-fit: cover;
       flex-shrink: 0; border: 3px solid rgba(255,255,255,0.5);
       box-shadow: 0 4px 20px rgba(0,0,0,0.25);
       background: linear-gradient(135deg, #c9aee8 0%, #e2cfc4 100%);
     }
-    .header-text { flex: 1; padding-top: 6px; }
+    .header-text { flex: 1; padding-top: 4px; }
     h1 {
-      font-family: var(--font-display); font-size: 2.3rem; font-weight: 700;
-      letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 10px; color: #fff;
+      font-family: var(--font-display); font-size: 2.1rem; font-weight: 700;
+      letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 8px; color: #fff;
     }
     .header-email {
-      font-family: var(--font-mono); font-size: 0.81rem;
-      color: rgba(255,255,255,0.75); margin-bottom: 0;
+      font-family: var(--font-mono); font-size: 0.79rem;
+      color: rgba(255,255,255,0.75);
     }
 
     /* Bio */
-    .bio { margin-bottom: 52px; }
-    .bio p { margin-bottom: 0.9em; color: var(--ink-mid); font-size: 1.02rem; }
+    .bio { margin-bottom: 36px; }
+    .bio p { margin-bottom: 0.6em; color: var(--ink-mid); font-size: 0.99rem; }
     .bio p:last-child { margin-bottom: 0; }
 
     /* Section labels */
     .section-label {
-      font-family: var(--font-display); font-size: 0.7rem; font-weight: 700;
+      font-family: var(--font-display); font-size: 0.68rem; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
-      margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
+      margin-bottom: 14px; display: flex; align-items: center; gap: 12px;
     }
     .section-label::after { content: ''; flex: 1; height: 1.5px; background: var(--accent-lt); }
 
     /* Papers */
-    .papers { margin-bottom: 52px; }
+    .papers { margin-bottom: 36px; }
     .papers-meta {
-      font-size: 0.86rem; font-family: var(--font-mono); color: var(--ink-light);
-      margin-bottom: 18px; display: flex; align-items: center; gap: 14px;
+      font-size: 0.83rem; font-family: var(--font-mono); color: var(--ink-light);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 12px;
     }
-    .paper { padding: 22px 0; border-bottom: 1px solid var(--rule); }
+    .paper { padding: 14px 0; border-bottom: 1px solid var(--rule); }
     .paper:first-of-type { border-top: 1px solid var(--rule); }
     .paper-title {
-      font-family: var(--font-display); font-size: 1.0rem; font-weight: 600;
-      line-height: 1.45; margin-bottom: 7px; color: var(--accent);
+      font-family: var(--font-display); font-size: 0.97rem; font-weight: 600;
+      line-height: 1.4; margin-bottom: 3px; color: var(--accent);
     }
-    .paper-authors { font-style: italic; font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 5px; }
+    .paper-authors { font-style: italic; font-size: 0.91rem; color: var(--ink-mid); margin-bottom: 2px; }
     .paper-authors .me { font-style: normal; font-weight: 600; color: var(--ink); }
-    .paper-venue { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 6px; }
+    .paper-venue { font-size: 0.87rem; color: var(--ink-light); margin-bottom: 0; }
     .paper-venue a { color: var(--accent-dim); text-decoration: none; }
     .paper-venue a:hover { text-decoration: underline; }
-    .paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
     .paper-links a {
-      font-family: var(--font-mono); font-size: 0.72rem; text-decoration: none;
+      font-family: var(--font-mono); font-size: 0.70rem; text-decoration: none;
       color: var(--accent); background: var(--tag-bg); border: 1px solid var(--accent-lt);
-      padding: 2px 9px; border-radius: 3px; transition: background 0.15s, color 0.15s;
+      padding: 1px 8px; border-radius: 3px; transition: background 0.15s, color 0.15s;
     }
     .paper-links a:hover { background: var(--accent); color: #fff; }
     .paper-tag {
-      display: inline-block; font-family: var(--font-display); font-size: 0.65rem;
+      display: inline-block; font-family: var(--font-display); font-size: 0.63rem;
       font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
       background: var(--tag-bg); color: var(--accent); border: 1px solid var(--accent-lt);
-      padding: 2px 7px; border-radius: 3px; margin-left: 8px; vertical-align: middle;
+      padding: 1px 6px; border-radius: 3px; margin-left: 7px; vertical-align: middle;
     }
 
     /* Scholar / extra link button */
     .pill-btn {
-      font-family: var(--font-display); font-size: 0.74rem; font-weight: 600;
+      font-family: var(--font-display); font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.04em; text-decoration: none; color: var(--accent);
-      border: 1.5px solid var(--accent); padding: 3px 11px; border-radius: 3px;
+      border: 1.5px solid var(--accent); padding: 2px 10px; border-radius: 3px;
       transition: background 0.15s, color 0.15s; white-space: nowrap;
     }
     .pill-btn:hover { background: var(--accent); color: #fff; }
 
     /* Teaching */
-    .teaching { margin-bottom: 52px; }
-    .ta-item { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .teaching { margin-bottom: 36px; }
+    .ta-item { padding: 9px 0; border-bottom: 1px solid var(--rule); }
     .ta-item:first-of-type { border-top: 1px solid var(--rule); }
-    .ta-course { font-family: var(--font-display); font-weight: 600; font-size: 0.97rem; margin-bottom: 2px; color: var(--ink); }
-    .ta-meta { font-size: 0.88rem; font-family: var(--font-mono); color: var(--ink-light); }
+    .ta-course { font-family: var(--font-display); font-weight: 600; font-size: 0.93rem; margin-bottom: 0; color: var(--ink); }
+    .ta-meta { font-size: 0.84rem; font-family: var(--font-mono); color: var(--ink-light); }
 
     /* Footer */
     footer {
-      margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule);
-      font-size: 0.78rem; font-family: var(--font-mono); color: var(--ink-light);
+      margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule);
+      font-size: 0.76rem; font-family: var(--font-mono); color: var(--ink-light);
     }
 
-    @media (max-width: 540px) {
-      .page { padding: 36px 20px 80px; }
-      .header { flex-direction: column; gap: 20px; padding: 28px 24px; }
-      h1 { font-size: 1.85rem; }
+    @media (max-width: 600px) {
+      .page { padding: 28px 18px 72px; }
+      .header { flex-direction: column; gap: 16px; padding: 24px 20px; }
+      h1 { font-size: 1.75rem; }
     }
   </style>
 </head>
@@ -138,64 +139,22 @@
 
 <script>
 /* ================================================================
-   ✏️  HOW TO EDIT THIS PAGE
-
    All your content is in the SITE object below.
-   You should never need to touch anything else.
-
-   ── ADD A NEW PAPER ──────────────────────────────────────────────
-   Paste this at the TOP of the papers: [ ... ] array (newest first):
-
-     {
-       title: "My New Paper.",
-       authors: "Alice, Bob, SELF.",   // SELF becomes your name
-       venue: "To appear at STOC 2027.",
-       venueLinks: [                   // optional — links inside venue text
-         { text: "STOC 2027", url: "https://stoc2027.example.com" },
-       ],
-       links: [                        // optional — pill buttons
-         { label: "arXiv:2701.12345", url: "https://arxiv.org/abs/2701.12345" },
-       ],
-       tag: "Upcoming",                // optional — remove once published
-     },
-
-   ── ADD A NEW TA POSITION ────────────────────────────────────────
-   Paste this at the TOP of the teaching: [ ... ] array (newest first):
-
-     { course: "BU CS 512 – Privacy", semesters: "Fall 2026" },
-
-   ── ADD A HEADER LINK (CV, GitHub, etc.) ────────────────────────
-   Uncomment or add a line in the links: [ ... ] array:
-
-     { label: "CV", url: "cv.pdf" },
-
-   ── CHANGE YOUR BIO ──────────────────────────────────────────────
-   Edit the strings in the bio: [ ... ] array. Each string = one paragraph.
-
-   ── CHANGE COLORS / FONTS ────────────────────────────────────────
-   Edit the CSS :root variables in the <style> block further above.
    ================================================================ */
 
 const SITE = {
 
-  /* ---------- Header ---------- */
   name:  "Connor Wagaman",
   email: "[mylastname] [at] bu.edu",
-  photo:      "index_files/image001-small.jpg",  // low-res, shown instantly in browser
-  photoHires: "index_files/image001.jpg",         // hi-res, seen by crawlers; loads in background
+  photo:      "index_files/image001-small.jpg",
+  photoHires: "index_files/image001.jpg",
 
-  /* ---------- Links (shown as buttons next to Google Scholar) ----------
-     Add or remove objects from this array.
-     Examples: { label: "CV", url: "cv.pdf" }
-               { label: "GitHub", url: "https://github.com/yourhandle" }   */
   links: [
     // { label: "CV", url: "cv.pdf" },
   ],
 
   googleScholar: "https://scholar.google.com/citations?user=pEyaa44AAAAJ",
 
-  /* ---------- Bio ----------
-     Each string is one paragraph.                                  */
   bio: [
     `I am a PhD student in computer science at Boston University, where I am advised by
      professors Adam Smith and Marco Gaboardi. I am interested in data privacy
@@ -205,15 +164,6 @@ const SITE = {
      Professor Salil Vadhan.`,
   ],
 
-  /* ---------- Papers ----------
-     List newest first.
-     Each paper has:
-       title      — plain text
-       authors    — use "SELF" as a placeholder for your own name
-       venue      — plain text (use venueLinks for linked parts)
-       venueLinks — optional: [{ text, url }, ...] replaces matching text with links
-       links      — optional pill buttons: [{ label, url }, ...]
-       tag        — optional badge text, e.g. "Upcoming"             */
   papers: [
     {
       title: "Local Node Differential Privacy.",
@@ -258,15 +208,15 @@ const SITE = {
     },
     {
       title: "Widespread Underestimation of Sensitivity in Differentially Private Libraries and How to Fix It.",
-      authors: "Sílvia Casacuberta, Michael Shoemate, Salil Vadhan, SELF.",
+      authors: "Silvia Casacuberta, Michael Shoemate, Salil Vadhan, SELF.",
       venue: "Presented at ACM CCS 2022 and TPDP 2022 (selected for a spotlight talk).",
       venueLinks: [
         { text: "ACM CCS 2022",   url: "https://doi.org/10.1145/3548606.3560708" },
         { text: "spotlight talk", url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
       ],
       links: [
-        { label: "arXiv:2207.10635",       url: "https://doi.org/10.48550/arXiv.2207.10635" },
-        { label: "ACM CCS 2022",           url: "https://doi.org/10.1145/3548606.3560708" },
+        { label: "arXiv:2207.10635",         url: "https://doi.org/10.48550/arXiv.2207.10635" },
+        { label: "ACM CCS 2022",             url: "https://doi.org/10.1145/3548606.3560708" },
         { label: "TPDP 2022 Spotlight Talk", url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
       ],
     },
@@ -277,9 +227,6 @@ const SITE = {
     },
   ],
 
-  /* ---------- Teaching ----------
-     List newest first.
-     Each entry: { course, semesters }                              */
   teaching: [
     { course: "Boston University CS 330 – Introduction to Analysis of Algorithms", semesters: "Fall 2023, Spring 2026" },
     { course: "Harvard CS 208 – Applied Privacy for Data Science",                  semesters: "Spring 2022" },
@@ -289,10 +236,9 @@ const SITE = {
 };
 
 /* ================================================================
-   END OF SITE DATA — do not edit below unless changing the design
+   END OF SITE DATA
    ================================================================ */
 
-/* ── Helpers ── */
 function esc(str) {
   return String(str)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
@@ -310,7 +256,6 @@ function linkifyVenue(text, venueLinks) {
   return result;
 }
 
-/* ── Render ── */
 function render() {
   const root = document.getElementById("root");
   const s = SITE;
@@ -348,10 +293,11 @@ function render() {
 
   root.innerHTML = `
     <header class="header">
-        <img id="profile-photo" class="header-photo"
-            src="${esc(s.photoHires)}"
-            data-lores="${esc(s.photo)}"
-            alt="${esc(myName)}">      <div class="header-text">
+      <img id="profile-photo" class="header-photo"
+          src="${esc(s.photoHires)}"
+          data-lores="${esc(s.photo)}"
+          alt="${esc(myName)}">
+      <div class="header-text">
         <h1>${esc(myName)}</h1>
         <p class="header-email">${esc(s.email)}</p>
       </div>
@@ -380,18 +326,10 @@ function render() {
 
 render();
 
-// Blur-up: hi-res is in the src for crawlers; swap to low-res instantly for fast display,
-// then load hi-res in the background and swap back in once ready.
 const el = document.getElementById('profile-photo');
-
-// hi-res (what crawlers see)
 const hi = el.src;
-
-// swap to low-res immediately for users
 const lo = el.dataset.lores;
 if (lo) el.src = lo;
-
-// preload hi-res and swap back
 const img = new Image();
 img.src = hi;
 img.onload = () => { el.src = hi; };
