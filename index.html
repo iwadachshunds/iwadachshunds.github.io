@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connor Wagaman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          ✏️  HOW TO EDIT THIS PAGE                           ║
+║                                                                              ║
+║  All your content lives in the SITE = { ... } block just below.             ║
+║  You should never need to touch anything else.                               ║
+║                                                                              ║
+║  ── ADD A NEW PAPER ──────────────────────────────────────────────────────  ║
+║  Paste this at the TOP of the papers: [ ... ] array (newest first):         ║
+║                                                                              ║
+║    {                                                                         ║
+║      title: "My New Paper.",                                                 ║
+║      authors: "Alice, Bob, SELF.",   // SELF becomes your name              ║
+║      venue: "To appear at STOC 2027.",                                       ║
+║      venueLinks: [                   // optional — links inside venue text  ║
+║        { text: "STOC 2027", url: "https://stoc2027.example.com" },          ║
+║      ],                                                                      ║
+║      links: [                        // optional — pill buttons             ║
+║        { label: "arXiv:2701.12345", url: "https://arxiv.org/abs/2701.12345" }, ║
+║      ],                                                                      ║
+║      tag: "Upcoming",                // optional — remove once published    ║
+║    },                                                                        ║
+║                                                                              ║
+║  ── ADD A NEW TA POSITION ────────────────────────────────────────────────  ║
+║  Paste this at the TOP of the teaching: [ ... ] array (newest first):       ║
+║                                                                              ║
+║    { course: "BU CS 512 – Privacy", semesters: "Fall 2026" },               ║
+║                                                                              ║
+║  ── ADD A HEADER LINK (CV, GitHub, etc.) ─────────────────────────────────  ║
+║  Uncomment or add a line in the links: [ ... ] array:                        ║
+║                                                                              ║
+║    { label: "CV", url: "cv.pdf" },                                           ║
+║                                                                              ║
+║  ── CHANGE YOUR BIO ──────────────────────────────────────────────────────  ║
+║  Edit the strings in the bio: [ ... ] array. Each string = one paragraph.   ║
+║                                                                              ║
+║  ── CHANGE COLORS / FONTS ────────────────────────────────────────────────  ║
+║  Edit the CSS :root variables in the <style> block (further down).          ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+
+
+<script>
+/* ================================================================
+   SITE DATA — edit everything in this block
+   ================================================================ */
+
+const SITE = {
+
+  /* ---------- Header ---------- */
+  name:  "Connor Wagaman",
+  email: "[mylastname] [at] bu.edu",
+  photo: "index_files/image001.jpg",   // path to your photo
+
+  /* ---------- Links (shown as buttons next to Google Scholar) ----------
+     Add or remove objects from this array.
+     Examples: { label: "CV", url: "cv.pdf" }
+               { label: "GitHub", url: "https://github.com/yourhandle" }   */
+  links: [
+    // { label: "CV", url: "cv.pdf" },
+  ],
+
+  googleScholar: "https://scholar.google.com/citations?user=pEyaa44AAAAJ",
+
+  /* ---------- Bio ----------
+     Each string is one paragraph.                                  */
+  bio: [
+    `I am a PhD student in computer science at Boston University, where I am advised by
+     professors Adam Smith and Marco Gaboardi. I am interested in data privacy
+     (e.g., differential privacy), especially privacy for network data.`,
+    `I graduated with an AB and SM (advanced standing) in computer science from
+     Harvard University, where I did research in differential privacy with
+     Professor Salil Vadhan.`,
+  ],
+
+  /* ---------- Papers ----------
+     List newest first.
+     Each paper has:
+       title   — plain text
+       authors — use "SELF" as a placeholder for your own name
+       venue   — plain text (use venueLinks for linked parts)
+       venueLinks — optional: [{ text, url }, ...] replaces matching text with links
+       links   — optional pill buttons: [{ label, url }, ...]
+       tag     — optional badge text, e.g. "Upcoming"             */
+  papers: [
+    {
+      title: "Local Node Differential Privacy.",
+      authors: "Sofya Raskhodnikova, Adam Smith, SELF, Anatoly Zavyalov.",
+      venue: "Manuscript, February 2026.",
+      links: [
+        { label: "arXiv:2602.15802", url: "https://doi.org/10.48550/arXiv.2602.15802" },
+      ],
+    },
+    {
+      title: "Separating Oblivious and Adaptive Differential Privacy under Continual Observation.",
+      authors: "Mark Bun, Marco Gaboardi, SELF.",
+      venue: "To appear at FORC (Symposium on the Foundations of Responsible Computing), June 2026.",
+      venueLinks: [
+        { text: "FORC", url: "https://responsiblecomputing.org/forc-2026-accepted-papers/" },
+      ],
+      links: [
+        { label: "arXiv:2603.11029", url: "https://arxiv.org/abs/2603.11029" },
+      ],
+      tag: "Upcoming",
+    },
+    {
+      title: "Refereed Learning.",
+      authors: "Ran Canetti, Ephraim Linder, SELF.",
+      venue: "Manuscript, October 2025.",
+      links: [
+        { label: "arXiv:2510.05440", url: "https://doi.org/10.48550/arXiv.2510.05440" },
+      ],
+    },
+    {
+      title: "Time-Aware Projections: Truly Node-Private Graph Statistics under Continual Observation.",
+      authors: "Palak Jain, Adam Smith, SELF.",
+      venue: "Presented at IEEE S&P (Oakland), May 2024.",
+      venueLinks: [
+        { text: "IEEE S&P (Oakland)", url: "https://doi.ieeecomputersociety.org/10.1109/SP54263.2024.00196" },
+      ],
+      links: [
+        { label: "arXiv:2403.04630",  url: "https://doi.org/10.48550/arXiv.2403.04630" },
+        { label: "IEEE S&P",          url: "https://doi.ieeecomputersociety.org/10.1109/SP54263.2024.00196" },
+      ],
+    },
+    {
+      title: "Widespread Underestimation of Sensitivity in Differentially Private Libraries and How to Fix It.",
+      authors: "Sílvia Casacuberta, Michael Shoemate, Salil Vadhan, SELF.",
+      venue: "Presented at ACM CCS 2022 and TPDP 2022 (selected for a spotlight talk).",
+      venueLinks: [
+        { text: "ACM CCS 2022",  url: "https://doi.org/10.1145/3548606.3560708" },
+        { text: "spotlight talk", url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
+      ],
+      links: [
+        { label: "arXiv:2207.10635", url: "https://doi.org/10.48550/arXiv.2207.10635" },
+        { label: "ACM CCS 2022",     url: "https://doi.org/10.1145/3548606.3560708" },
+        { label: "Spotlight talk",   url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
+      ],
+    },
+    {
+      title: "Finite-Precision Arithmetic Isn't Real: The Impact of Finite Data Types on Efforts to Fulfill Differential Privacy on Computers.",
+      authors: "SELF.",
+      venue: "Senior thesis, Harvard University (highest honors). Advised by Professor Salil Vadhan.",
+    },
+  ],
+
+  /* ---------- Teaching ----------
+     List newest first.
+     Each entry: { course, semesters }                              */
+  teaching: [
+    { course: "Boston University CS 330 – Introduction to Analysis of Algorithms", semesters: "Fall 2023, Spring 2026" },
+    { course: "Harvard CS 208 – Applied Privacy for Data Science",                  semesters: "Spring 2022" },
+    { course: "Harvard CS 20 – Discrete Mathematics for Computer Science",          semesters: "Spring 2020, Spring 2021" },
+  ],
+
+};
+/* ================================================================
+   END OF SITE DATA — do not edit below unless changing the design
+   ================================================================ */
+</script>
+
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #f7f5f0;
+      --surface:      #ffffff;
+      --ink:          #1a1714;
+      --ink-mid:      #4a4540;
+      --ink-light:    #8a837a;
+      --rule:         #e0dbd4;
+      --accent:       #5d2b97;
+      --accent-lt:    #ede0f7;
+      --accent-dim:   #7a4aad;
+      --tag-bg:       #f5eeff;
+      --font-display: 'Raleway', sans-serif;
+      --font-body:    'Source Sans 3', sans-serif;
+      --font-mono:    'DM Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.72;
+      min-height: 100vh;
+    }
+
+    .page { max-width: 780px; margin: 0 auto; padding: 64px 32px 120px; }
+
+    /* Header */
+    .header {
+      display: flex; align-items: flex-start; gap: 36px;
+      margin-bottom: 48px; padding: 40px 40px 36px;
+      background: var(--accent); border-radius: 6px;
+    }
+    .header-photo {
+      width: 110px; height: 110px; border-radius: 50%; object-fit: cover;
+      flex-shrink: 0; border: 3px solid rgba(255,255,255,0.5);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      background: linear-gradient(135deg, #c9aee8 0%, #e2cfc4 100%);
+    }
+    .header-text { flex: 1; padding-top: 6px; }
+    h1 {
+      font-family: var(--font-display); font-size: 2.3rem; font-weight: 700;
+      letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 10px; color: #fff;
+    }
+    .header-email {
+      font-family: var(--font-mono); font-size: 0.81rem;
+      color: rgba(255,255,255,0.75); margin-bottom: 0;
+    }
+
+    /* Bio */
+    .bio { margin-bottom: 52px; }
+    .bio p { margin-bottom: 0.9em; color: var(--ink-mid); font-size: 1.02rem; }
+    .bio p:last-child { margin-bottom: 0; }
+
+    /* Section labels */
+    .section-label {
+      font-family: var(--font-display); font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 20px; display: flex; align-items: center; gap: 12px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1.5px; background: var(--accent-lt); }
+
+    /* Papers */
+    .papers { margin-bottom: 52px; }
+    .papers-meta {
+      font-size: 0.86rem; font-family: var(--font-mono); color: var(--ink-light);
+      margin-bottom: 18px; display: flex; align-items: center; gap: 14px;
+    }
+    .paper { padding: 22px 0; border-bottom: 1px solid var(--rule); }
+    .paper:first-of-type { border-top: 1px solid var(--rule); }
+    .paper-title {
+      font-family: var(--font-display); font-size: 1.0rem; font-weight: 600;
+      line-height: 1.45; margin-bottom: 7px; color: var(--accent);
+    }
+    .paper-authors { font-style: italic; font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 5px; }
+    .paper-authors .me { font-style: normal; font-weight: 600; color: var(--ink); }
+    .paper-venue { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 6px; }
+    .paper-venue a { color: var(--accent-dim); text-decoration: none; }
+    .paper-venue a:hover { text-decoration: underline; }
+    .paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .paper-links a {
+      font-family: var(--font-mono); font-size: 0.72rem; text-decoration: none;
+      color: var(--accent); background: var(--tag-bg); border: 1px solid var(--accent-lt);
+      padding: 2px 9px; border-radius: 3px; transition: background 0.15s, color 0.15s;
+    }
+    .paper-links a:hover { background: var(--accent); color: #fff; }
+    .paper-tag {
+      display: inline-block; font-family: var(--font-display); font-size: 0.65rem;
+      font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      background: var(--tag-bg); color: var(--accent); border: 1px solid var(--accent-lt);
+      padding: 2px 7px; border-radius: 3px; margin-left: 8px; vertical-align: middle;
+    }
+
+    /* Scholar / extra link button */
+    .pill-btn {
+      font-family: var(--font-display); font-size: 0.74rem; font-weight: 600;
+      letter-spacing: 0.04em; text-decoration: none; color: var(--accent);
+      border: 1.5px solid var(--accent); padding: 3px 11px; border-radius: 3px;
+      transition: background 0.15s, color 0.15s; white-space: nowrap;
+    }
+    .pill-btn:hover { background: var(--accent); color: #fff; }
+
+    /* Teaching */
+    .teaching { margin-bottom: 52px; }
+    .ta-item { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    .ta-item:first-of-type { border-top: 1px solid var(--rule); }
+    .ta-course { font-family: var(--font-display); font-weight: 600; font-size: 0.97rem; margin-bottom: 2px; color: var(--ink); }
+    .ta-meta { font-size: 0.88rem; font-family: var(--font-mono); color: var(--ink-light); }
+
+    /* Footer */
+    footer {
+      margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule);
+      font-size: 0.78rem; font-family: var(--font-mono); color: var(--ink-light);
+    }
+
+    @media (max-width: 540px) {
+      .page { padding: 36px 20px 80px; }
+      .header { flex-direction: column; gap: 20px; padding: 28px 24px; }
+      h1 { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page" id="root"></div>
+
+<script>
+/* ── Helpers ── */
+function esc(str) {
+  return String(str)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;");
+}
+
+/* Replace plain-text substrings with <a> tags using venueLinks */
+function linkifyVenue(text, venueLinks) {
+  if (!venueLinks || !venueLinks.length) return esc(text);
+  let result = esc(text);
+  for (const {text: t, url} of venueLinks) {
+    const escaped = esc(t);
+    result = result.replace(escaped,
+      `<a href="${esc(url)}" target="_blank">${escaped}</a>`);
+  }
+  return result;
+}
+
+/* ── Render ── */
+function render() {
+  const root = document.getElementById("root");
+  const s = SITE;
+  const myName = s.name;
+
+  /* Header */
+  const headerLinks = (s.links || []).map(l =>
+    `<a class="pill-btn" href="${esc(l.url)}" target="_blank">${esc(l.label)}</a>`
+  ).join("");
+
+  /* Bio */
+  const bioHTML = s.bio.map(p => `<p>${p.trim()}</p>`).join("\n");
+
+  /* Papers */
+  const papersHTML = s.papers.map(p => {
+    const authorsHTML = esc(p.authors).replace(esc("SELF"),
+      `<span class="me">${esc(myName)}</span>`);
+    const venueHTML   = linkifyVenue(p.venue, p.venueLinks);
+    const tagHTML     = p.tag ? `<span class="paper-tag">${esc(p.tag)}</span>` : "";
+    const linksHTML   = (p.links && p.links.length)
+      ? `<div class="paper-links">${p.links.map(l =>
+          `<a href="${esc(l.url)}" target="_blank">${esc(l.label)}</a>`).join("")}</div>`
+      : "";
+    return `
+    <div class="paper">
+      <p class="paper-title">${esc(p.title)}</p>
+      <p class="paper-authors">${authorsHTML}</p>
+      <p class="paper-venue">${venueHTML}${tagHTML}</p>
+      ${linksHTML}
+    </div>`;
+  }).join("\n");
+
+  /* Teaching */
+  const teachingHTML = s.teaching.map(t => `
+    <div class="ta-item">
+      <p class="ta-course">${esc(t.course)}</p>
+      <p class="ta-meta">${esc(t.semesters)}</p>
+    </div>`).join("\n");
+
+  root.innerHTML = `
+    <header class="header">
+      <img class="header-photo" src="${esc(s.photo)}" alt="${esc(myName)}">
+      <div class="header-text">
+        <h1>${esc(myName)}</h1>
+        <p class="header-email">${esc(s.email)}</p>
+      </div>
+    </header>
+
+    <section class="bio">${bioHTML}</section>
+
+    <section class="papers">
+      <div class="section-label">Research</div>
+      <p class="papers-meta">
+        Authors listed alphabetically.
+        <a class="pill-btn" href="${esc(s.googleScholar)}" target="_blank">Google Scholar</a>
+        ${headerLinks}
+      </p>
+      ${papersHTML}
+    </section>
+
+    <section class="teaching">
+      <div class="section-label">Teaching Assistantships</div>
+      ${teachingHTML}
+    </section>
+
+    <footer>${esc(myName)} &middot; Boston University</footer>
+  `;
+}
+
+render();
+</script>
+</body>
+</html>
