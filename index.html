@@ -347,8 +347,10 @@ function render() {
 
   root.innerHTML = `
     <header class="header">
-      <img id="profile-photo" class="header-photo" src="${esc(s.photoHires)}" alt="${esc(myName)}">
-      <div class="header-text">
+        <img id="profile-photo" class="header-photo"
+            src="${esc(s.photoHires)}"
+            data-lores="${esc(s.photo)}"
+            alt="${esc(myName)}">      <div class="header-text">
         <h1>${esc(myName)}</h1>
         <p class="header-email">${esc(s.email)}</p>
       </div>
@@ -380,12 +382,18 @@ render();
 // Blur-up: hi-res is in the src for crawlers; swap to low-res instantly for fast display,
 // then load hi-res in the background and swap back in once ready.
 const el = document.getElementById('profile-photo');
-el.src = SITE.photo;
-el.style.filter = 'blur(6px)';
-el.style.transition = 'filter 0.4s';
-const hires = new Image();
-hires.src = SITE.photoHires;
-hires.onload = () => { el.src = SITE.photoHires; el.style.filter = 'none'; };
+
+// hi-res (what crawlers see)
+const hi = el.src;
+
+// swap to low-res immediately for users
+const lo = el.dataset.lores;
+if (lo) el.src = lo;
+
+// preload hi-res and swap back
+const img = new Image();
+img.src = hi;
+img.onload = () => { el.src = hi; };
 </script>
 </body>
 </html>
