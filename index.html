@@ -7,170 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-
-<!--
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                          ✏️  HOW TO EDIT THIS PAGE                           ║
-║                                                                              ║
-║  All your content lives in the SITE = { ... } block just below.             ║
-║  You should never need to touch anything else.                               ║
-║                                                                              ║
-║  ── ADD A NEW PAPER ──────────────────────────────────────────────────────  ║
-║  Paste this at the TOP of the papers: [ ... ] array (newest first):         ║
-║                                                                              ║
-║    {                                                                         ║
-║      title: "My New Paper.",                                                 ║
-║      authors: "Alice, Bob, SELF.",   // SELF becomes your name              ║
-║      venue: "To appear at STOC 2027.",                                       ║
-║      venueLinks: [                   // optional — links inside venue text  ║
-║        { text: "STOC 2027", url: "https://stoc2027.example.com" },          ║
-║      ],                                                                      ║
-║      links: [                        // optional — pill buttons             ║
-║        { label: "arXiv:2701.12345", url: "https://arxiv.org/abs/2701.12345" }, ║
-║      ],                                                                      ║
-║      tag: "Upcoming",                // optional — remove once published    ║
-║    },                                                                        ║
-║                                                                              ║
-║  ── ADD A NEW TA POSITION ────────────────────────────────────────────────  ║
-║  Paste this at the TOP of the teaching: [ ... ] array (newest first):       ║
-║                                                                              ║
-║    { course: "BU CS 512 – Privacy", semesters: "Fall 2026" },               ║
-║                                                                              ║
-║  ── ADD A HEADER LINK (CV, GitHub, etc.) ─────────────────────────────────  ║
-║  Uncomment or add a line in the links: [ ... ] array:                        ║
-║                                                                              ║
-║    { label: "CV", url: "cv.pdf" },                                           ║
-║                                                                              ║
-║  ── CHANGE YOUR BIO ──────────────────────────────────────────────────────  ║
-║  Edit the strings in the bio: [ ... ] array. Each string = one paragraph.   ║
-║                                                                              ║
-║  ── CHANGE COLORS / FONTS ────────────────────────────────────────────────  ║
-║  Edit the CSS :root variables in the <style> block (further down).          ║
-╚══════════════════════════════════════════════════════════════════════════════╝
--->
-
-
-<script>
-/* ================================================================
-   SITE DATA — edit everything in this block
-   ================================================================ */
-
-const SITE = {
-
-  /* ---------- Header ---------- */
-  name:  "Connor Wagaman",
-  email: "[mylastname] [at] bu.edu",
-  photo:       "index_files/image001-small.jpg",  // low-res, actually loaded
-  photoHires:  "index_files/image001.jpg",         // hi-res, only downloaded on right-click
-
-  /* ---------- Links (shown as buttons next to Google Scholar) ----------
-     Add or remove objects from this array.
-     Examples: { label: "CV", url: "cv.pdf" }
-               { label: "GitHub", url: "https://github.com/yourhandle" }   */
-  links: [
-    // { label: "CV", url: "cv.pdf" },
-  ],
-
-  googleScholar: "https://scholar.google.com/citations?user=pEyaa44AAAAJ",
-
-  /* ---------- Bio ----------
-     Each string is one paragraph.                                  */
-  bio: [
-    `I am a PhD student in computer science at Boston University, where I am advised by
-     professors Adam Smith and Marco Gaboardi. I am interested in data privacy
-     (e.g., differential privacy), especially privacy for network data.`,
-    `I graduated with an AB and SM (advanced standing) in computer science from
-     Harvard University, where I did research in differential privacy with
-     Professor Salil Vadhan.`,
-  ],
-
-  /* ---------- Papers ----------
-     List newest first.
-     Each paper has:
-       title   — plain text
-       authors — use "SELF" as a placeholder for your own name
-       venue   — plain text (use venueLinks for linked parts)
-       venueLinks — optional: [{ text, url }, ...] replaces matching text with links
-       links   — optional pill buttons: [{ label, url }, ...]
-       tag     — optional badge text, e.g. "Upcoming"             */
-  papers: [
-    {
-      title: "Local Node Differential Privacy.",
-      authors: "Sofya Raskhodnikova, Adam Smith, SELF, Anatoly Zavyalov.",
-      venue: "Manuscript, February 2026.",
-      links: [
-        { label: "arXiv:2602.15802", url: "https://doi.org/10.48550/arXiv.2602.15802" },
-      ],
-    },
-    {
-      title: "Separating Oblivious and Adaptive Differential Privacy under Continual Observation.",
-      authors: "Mark Bun, Marco Gaboardi, SELF.",
-      venue: "To appear at FORC (Symposium on the Foundations of Responsible Computing), June 2026.",
-      venueLinks: [
-        { text: "FORC", url: "https://responsiblecomputing.org/forc-2026-accepted-papers/" },
-      ],
-      links: [
-        { label: "arXiv:2603.11029", url: "https://arxiv.org/abs/2603.11029" },
-      ],
-      tag: "Upcoming",
-    },
-    {
-      title: "Refereed Learning.",
-      authors: "Ran Canetti, Ephraim Linder, SELF.",
-      venue: "Manuscript, October 2025.",
-      links: [
-        { label: "arXiv:2510.05440", url: "https://doi.org/10.48550/arXiv.2510.05440" },
-      ],
-    },
-    {
-      title: "Time-Aware Projections: Truly Node-Private Graph Statistics under Continual Observation.",
-      authors: "Palak Jain, Adam Smith, SELF.",
-      venue: "Presented at IEEE S&P (Oakland), May 2024.",
-      venueLinks: [
-        { text: "IEEE S&P (Oakland)", url: "https://doi.ieeecomputersociety.org/10.1109/SP54263.2024.00196" },
-      ],
-      links: [
-        { label: "arXiv:2403.04630",  url: "https://doi.org/10.48550/arXiv.2403.04630" },
-        { label: "IEEE S&P 2024",          url: "https://doi.ieeecomputersociety.org/10.1109/SP54263.2024.00196" },
-      ],
-    },
-    {
-      title: "Widespread Underestimation of Sensitivity in Differentially Private Libraries and How to Fix It.",
-      authors: "Sílvia Casacuberta, Michael Shoemate, Salil Vadhan, SELF.",
-      venue: "Presented at ACM CCS 2022 and TPDP 2022 (selected for a spotlight talk).",
-      venueLinks: [
-        { text: "ACM CCS 2022",  url: "https://doi.org/10.1145/3548606.3560708" },
-        { text: "spotlight talk", url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
-      ],
-      links: [
-        { label: "arXiv:2207.10635", url: "https://doi.org/10.48550/arXiv.2207.10635" },
-        { label: "ACM CCS 2022",     url: "https://doi.org/10.1145/3548606.3560708" },
-        { label: "TPDP 2022 Spotlight Talk",   url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
-      ],
-    },
-    {
-      title: "Finite-Precision Arithmetic Isn't Real: The Impact of Finite Data Types on Efforts to Fulfill Differential Privacy on Computers.",
-      authors: "SELF.",
-      venue: "Senior thesis, Harvard University (highest honors). Advised by Professor Salil Vadhan.",
-    },
-  ],
-
-  /* ---------- Teaching ----------
-     List newest first.
-     Each entry: { course, semesters }                              */
-  teaching: [
-    { course: "Boston University CS 330 – Introduction to Analysis of Algorithms", semesters: "Fall 2023, Spring 2026" },
-    { course: "Harvard CS 208 – Applied Privacy for Data Science",                  semesters: "Spring 2022" },
-    { course: "Harvard CS 20 – Discrete Mathematics for Computer Science",          semesters: "Spring 2020, Spring 2021" },
-  ],
-
-};
-/* ================================================================
-   END OF SITE DATA — do not edit below unless changing the design
-   ================================================================ */
-</script>
-
-
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -301,6 +137,160 @@ const SITE = {
 <div class="page" id="root"></div>
 
 <script>
+/* ================================================================
+   ✏️  HOW TO EDIT THIS PAGE
+
+   All your content is in the SITE object below.
+   You should never need to touch anything else.
+
+   ── ADD A NEW PAPER ──────────────────────────────────────────────
+   Paste this at the TOP of the papers: [ ... ] array (newest first):
+
+     {
+       title: "My New Paper.",
+       authors: "Alice, Bob, SELF.",   // SELF becomes your name
+       venue: "To appear at STOC 2027.",
+       venueLinks: [                   // optional — links inside venue text
+         { text: "STOC 2027", url: "https://stoc2027.example.com" },
+       ],
+       links: [                        // optional — pill buttons
+         { label: "arXiv:2701.12345", url: "https://arxiv.org/abs/2701.12345" },
+       ],
+       tag: "Upcoming",                // optional — remove once published
+     },
+
+   ── ADD A NEW TA POSITION ────────────────────────────────────────
+   Paste this at the TOP of the teaching: [ ... ] array (newest first):
+
+     { course: "BU CS 512 – Privacy", semesters: "Fall 2026" },
+
+   ── ADD A HEADER LINK (CV, GitHub, etc.) ────────────────────────
+   Uncomment or add a line in the links: [ ... ] array:
+
+     { label: "CV", url: "cv.pdf" },
+
+   ── CHANGE YOUR BIO ──────────────────────────────────────────────
+   Edit the strings in the bio: [ ... ] array. Each string = one paragraph.
+
+   ── CHANGE COLORS / FONTS ────────────────────────────────────────
+   Edit the CSS :root variables in the <style> block further above.
+   ================================================================ */
+
+const SITE = {
+
+  /* ---------- Header ---------- */
+  name:  "Connor Wagaman",
+  email: "[mylastname] [at] bu.edu",
+  photo:      "index_files/image001-small.jpg",  // low-res, shown in browser
+  photoHires: "index_files/image001.jpg",         // hi-res, seen by crawlers & downloaded on right-click
+
+  /* ---------- Links (shown as buttons next to Google Scholar) ----------
+     Add or remove objects from this array.
+     Examples: { label: "CV", url: "cv.pdf" }
+               { label: "GitHub", url: "https://github.com/yourhandle" }   */
+  links: [
+    // { label: "CV", url: "cv.pdf" },
+  ],
+
+  googleScholar: "https://scholar.google.com/citations?user=pEyaa44AAAAJ",
+
+  /* ---------- Bio ----------
+     Each string is one paragraph.                                  */
+  bio: [
+    `I am a PhD student in computer science at Boston University, where I am advised by
+     professors Adam Smith and Marco Gaboardi. I am interested in data privacy
+     (e.g., differential privacy), especially privacy for network data.`,
+    `I graduated with an AB and SM (advanced standing) in computer science from
+     Harvard University, where I did research in differential privacy with
+     Professor Salil Vadhan.`,
+  ],
+
+  /* ---------- Papers ----------
+     List newest first.
+     Each paper has:
+       title      — plain text
+       authors    — use "SELF" as a placeholder for your own name
+       venue      — plain text (use venueLinks for linked parts)
+       venueLinks — optional: [{ text, url }, ...] replaces matching text with links
+       links      — optional pill buttons: [{ label, url }, ...]
+       tag        — optional badge text, e.g. "Upcoming"             */
+  papers: [
+    {
+      title: "Local Node Differential Privacy.",
+      authors: "Sofya Raskhodnikova, Adam Smith, SELF, Anatoly Zavyalov.",
+      venue: "Manuscript, February 2026.",
+      links: [
+        { label: "arXiv:2602.15802", url: "https://doi.org/10.48550/arXiv.2602.15802" },
+      ],
+    },
+    {
+      title: "Separating Oblivious and Adaptive Differential Privacy under Continual Observation.",
+      authors: "Mark Bun, Marco Gaboardi, SELF.",
+      venue: "To appear at FORC (Symposium on the Foundations of Responsible Computing), June 2026.",
+      venueLinks: [
+        { text: "FORC", url: "https://responsiblecomputing.org/forc-2026-accepted-papers/" },
+      ],
+      links: [
+        { label: "arXiv:2603.11029", url: "https://arxiv.org/abs/2603.11029" },
+      ],
+      tag: "Upcoming",
+    },
+    {
+      title: "Refereed Learning.",
+      authors: "Ran Canetti, Ephraim Linder, SELF.",
+      venue: "Manuscript, October 2025.",
+      links: [
+        { label: "arXiv:2510.05440", url: "https://doi.org/10.48550/arXiv.2510.05440" },
+      ],
+    },
+    {
+      title: "Time-Aware Projections: Truly Node-Private Graph Statistics under Continual Observation.",
+      authors: "Palak Jain, Adam Smith, SELF.",
+      venue: "Presented at IEEE S&P (Oakland), May 2024.",
+      venueLinks: [
+        { text: "IEEE S&P (Oakland)", url: "https://doi.ieeecomputersociety.org/10.1109/SP54263.2024.00196" },
+      ],
+      links: [
+        { label: "arXiv:2403.04630", url: "https://doi.org/10.48550/arXiv.2403.04630" },
+        { label: "IEEE S&P 2024",    url: "https://doi.ieeecomputersociety.org/10.1109/SP54263.2024.00196" },
+      ],
+    },
+    {
+      title: "Widespread Underestimation of Sensitivity in Differentially Private Libraries and How to Fix It.",
+      authors: "Sílvia Casacuberta, Michael Shoemate, Salil Vadhan, SELF.",
+      venue: "Presented at ACM CCS 2022 and TPDP 2022 (selected for a spotlight talk).",
+      venueLinks: [
+        { text: "ACM CCS 2022",   url: "https://doi.org/10.1145/3548606.3560708" },
+        { text: "spotlight talk", url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
+      ],
+      links: [
+        { label: "arXiv:2207.10635",       url: "https://doi.org/10.48550/arXiv.2207.10635" },
+        { label: "ACM CCS 2022",           url: "https://doi.org/10.1145/3548606.3560708" },
+        { label: "TPDP 2022 Spotlight Talk", url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
+      ],
+    },
+    {
+      title: "Finite-Precision Arithmetic Isn't Real: The Impact of Finite Data Types on Efforts to Fulfill Differential Privacy on Computers.",
+      authors: "SELF.",
+      venue: "Senior thesis, Harvard University (highest honors). Advised by Professor Salil Vadhan.",
+    },
+  ],
+
+  /* ---------- Teaching ----------
+     List newest first.
+     Each entry: { course, semesters }                              */
+  teaching: [
+    { course: "Boston University CS 330 – Introduction to Analysis of Algorithms", semesters: "Fall 2023, Spring 2026" },
+    { course: "Harvard CS 208 – Applied Privacy for Data Science",                  semesters: "Spring 2022" },
+    { course: "Harvard CS 20 – Discrete Mathematics for Computer Science",          semesters: "Spring 2020, Spring 2021" },
+  ],
+
+};
+
+/* ================================================================
+   END OF SITE DATA — do not edit below unless changing the design
+   ================================================================ */
+
 /* ── Helpers ── */
 function esc(str) {
   return String(str)
@@ -308,7 +298,6 @@ function esc(str) {
     .replace(/"/g,"&quot;");
 }
 
-/* Replace plain-text substrings with <a> tags using venueLinks */
 function linkifyVenue(text, venueLinks) {
   if (!venueLinks || !venueLinks.length) return esc(text);
   let result = esc(text);
@@ -326,21 +315,18 @@ function render() {
   const s = SITE;
   const myName = s.name;
 
-  /* Header */
   const headerLinks = (s.links || []).map(l =>
     `<a class="pill-btn" href="${esc(l.url)}" target="_blank">${esc(l.label)}</a>`
   ).join("");
 
-  /* Bio */
   const bioHTML = s.bio.map(p => `<p>${p.trim()}</p>`).join("\n");
 
-  /* Papers */
   const papersHTML = s.papers.map(p => {
     const authorsHTML = esc(p.authors).replace(esc("SELF"),
       `<span class="me">${esc(myName)}</span>`);
-    const venueHTML   = linkifyVenue(p.venue, p.venueLinks);
-    const tagHTML     = p.tag ? `<span class="paper-tag">${esc(p.tag)}</span>` : "";
-    const linksHTML   = (p.links && p.links.length)
+    const venueHTML = linkifyVenue(p.venue, p.venueLinks);
+    const tagHTML   = p.tag ? `<span class="paper-tag">${esc(p.tag)}</span>` : "";
+    const linksHTML = (p.links && p.links.length)
       ? `<div class="paper-links">${p.links.map(l =>
           `<a href="${esc(l.url)}" target="_blank">${esc(l.label)}</a>`).join("")}</div>`
       : "";
@@ -353,7 +339,6 @@ function render() {
     </div>`;
   }).join("\n");
 
-  /* Teaching */
   const teachingHTML = s.teaching.map(t => `
     <div class="ta-item">
       <p class="ta-course">${esc(t.course)}</p>
@@ -362,7 +347,7 @@ function render() {
 
   root.innerHTML = `
     <header class="header">
-      <img class="header-photo" src="${esc(s.photo)}" alt="${esc(myName)}">
+      <img id="profile-photo" class="header-photo" src="${esc(s.photoHires)}" alt="${esc(myName)}">
       <div class="header-text">
         <h1>${esc(myName)}</h1>
         <p class="header-email">${esc(s.email)}</p>
@@ -390,15 +375,20 @@ function render() {
   `;
 }
 
-document.getElementById('profile-photo').addEventListener('contextmenu', function(e) {
+render();
+
+// Swap in low-res for display; hi-res stays in the DOM for crawlers
+const el = document.getElementById('profile-photo');
+el.src = SITE.photo;
+
+// Right-click downloads hi-res
+el.addEventListener('contextmenu', function(e) {
   e.preventDefault();
   const a = document.createElement('a');
   a.href = SITE.photoHires;
   a.download = 'connor-wagaman.jpg';
   a.click();
 });
-
-render();
 </script>
 </body>
 </html>
