@@ -36,10 +36,9 @@
       min-height: 100vh;
     }
 
-    /* wider, tighter page */
     .page { max-width: 980px; margin: 0 auto; padding: 48px 40px 100px; }
 
-    /* Header */
+    /* ── Header ── */
     .header {
       display: flex; align-items: flex-start; gap: 36px;
       margin-bottom: 36px; padding: 40px 40px 36px;
@@ -61,12 +60,12 @@
       color: rgba(255,255,255,0.75); margin-bottom: 0;
     }
 
-    /* Bio */
+    /* ── Bio ── */
     .bio { margin-bottom: 36px; }
     .bio p { margin-bottom: 0.6em; color: var(--ink-mid); font-size: 0.99rem; }
     .bio p:last-child { margin-bottom: 0; }
 
-    /* Section labels */
+    /* ── Section labels ── */
     .section-label {
       font-family: var(--font-display); font-size: 0.68rem; font-weight: 700;
       letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
@@ -74,7 +73,33 @@
     }
     .section-label::after { content: ''; flex: 1; height: 1.5px; background: var(--accent-lt); }
 
-    /* Papers */
+    /* ── News ── */
+    .news { margin-bottom: 36px; }
+    .news-header {
+      display: flex; align-items: center; margin-bottom: 14px;
+    }
+    .news-header .section-label { flex: 1; margin-bottom: 0; }
+    .news-toggle {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--accent); background: none; border: none;
+      cursor: pointer; padding: 0; flex-shrink: 0;
+      /* text-decoration: underline; text-underline-offset: 2px; */
+      /* always visible — no hover-only opacity */
+    }
+    .news-list {
+      list-style: disc; padding-left: 1.3em; margin: 0;
+    }
+    .news-list li { color: var(--ink-mid); font-size: 0.93rem; padding: 3px 0; }
+    .news-list li strong { font-weight: 600; color: var(--ink-mid); }
+    .news-rest-wrap {
+      overflow: hidden;
+      transition: height 0.22s ease, opacity 0.22s ease;
+    }
+    .news-rest-list { list-style: disc; padding-left: 1.3em; margin: 0; }
+    .news-rest-list li { color: var(--ink-mid); font-size: 0.93rem; padding: 3px 0; }
+    .news-rest-list li strong { font-weight: 600; color: var(--ink-mid); }
+
+    /* ── Papers ── */
     .papers { margin-bottom: 36px; }
     .papers-meta {
       font-size: 0.83rem; font-family: var(--font-mono); color: var(--ink-light);
@@ -86,9 +111,7 @@
       font-family: var(--font-display); font-size: 0.97rem; font-weight: 600;
       line-height: 1.4; margin-bottom: 3px; color: var(--accent);
     }
-    .paper-title a {
-      color: inherit; text-decoration: none;
-    }
+    .paper-title a { color: inherit; text-decoration: none; }
     .paper-title a:hover { text-decoration: underline; }
     .paper-authors { font-style: italic; font-size: 0.91rem; color: var(--ink-mid); margin-bottom: 2px; }
     .paper-authors .me { font-style: normal; font-weight: 600; color: var(--ink); }
@@ -109,7 +132,7 @@
       padding: 1px 6px; border-radius: 3px; margin-left: 7px; vertical-align: middle;
     }
 
-    /* Scholar / extra link button */
+    /* ── Scholar / extra link button ── */
     .pill-btn {
       font-family: var(--font-display); font-size: 0.72rem; font-weight: 600;
       letter-spacing: 0.04em; text-decoration: none; color: var(--accent);
@@ -118,14 +141,14 @@
     }
     .pill-btn:hover { background: var(--accent); color: #fff; }
 
-    /* Teaching */
+    /* ── Teaching ── */
     .teaching { margin-bottom: 36px; }
     .ta-item { padding: 9px 0; border-bottom: 1px solid var(--rule); }
     .ta-item:first-of-type { border-top: 1px solid var(--rule); }
     .ta-course { font-family: var(--font-display); font-weight: 600; font-size: 0.93rem; margin-bottom: 0; color: var(--ink); }
     .ta-meta { font-size: 0.84rem; font-family: var(--font-mono); color: var(--ink-light); }
 
-    /* Footer */
+    /* ── Footer ── */
     footer {
       margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule);
       font-size: 0.76rem; font-family: var(--font-mono); color: var(--ink-light);
@@ -148,8 +171,8 @@
 
 const SITE = {
 
-  name:  "Connor Wagaman",
-  email: "[mylastname] [at] bu.edu",
+  name:       "Connor Wagaman",
+  email:      "[mylastname] [at] bu.edu",
   photo:      "index_files/image001-small.jpg",
   photoHires: "index_files/image001.jpg",
 
@@ -170,40 +193,53 @@ const SITE = {
      Professor Salil Vadhan.`,
   ],
 
+  news: [
+    { date: "May 2026",      text: `I will be a research intern at Amazon this summer, working with Shiva Kasiviswanathan.` },
+    { date: "April 2026",    text: `Talk at Google on "Local Node Differential Privacy".` },
+    { date: "April 2026",    text: `Two papers accepted to TPDP! ("Local Node Differential Privacy" and "Separating Oblivious and Adaptive...")` },
+    { date: "March 2026",    text: `Two papers accepted to FORC! ("Separating Oblivious and Adaptive...", and "Local Node Differential Privacy" for the highlights track).` },
+    { date: "March 2026",    text: `Talk at Berkeley on "Local Node Differential Privacy".` },
+    { date: "March 2026",    text: `Talk at the Simons Institute on "Local Node Differential Privacy" (with Adam Smith!).` },
+    { date: "March 2026",    text: `Talk at MIT on "Refereed Learning".` },
+    { date: "March 2026",    text: `Talk at Harvard on "Local Node Differential Privacy".` },
+    { date: "March 2026",    text: `Talk at BU on "Local Node Differential Privacy".` },
+    { date: "February 2026", text: `Talk at Northeastern on "Local Node Differential Privacy".` },
+  ],
+
   papers: [
     {
-      title: "Local Node Differential Privacy.",
+      title:   "Local Node Differential Privacy.",
       authors: "Sofya Raskhodnikova, Adam Smith, SELF, Anatoly Zavyalov.",
-      venue: "Manuscript, February 2026.",
+      venue:   "Manuscript, February 2026.",
       links: [
         { label: "arXiv:2602.15802", url: "https://doi.org/10.48550/arXiv.2602.15802" },
       ],
     },
     {
-      title: "Separating Oblivious and Adaptive Differential Privacy under Continual Observation.",
+      title:   "Separating Oblivious and Adaptive Differential Privacy under Continual Observation.",
       authors: "Mark Bun, Marco Gaboardi, SELF.",
-      venue: "To appear at FORC (Symposium on the Foundations of Responsible Computing), June 2026.",
+      venue:   "To appear at FORC (Symposium on the Foundations of Responsible Computing), June 2026.",
       venueLinks: [
         { text: "FORC", url: "https://responsiblecomputing.org/forc-2026-accepted-papers/" },
       ],
       links: [
         { label: "arXiv:2603.11029", url: "https://arxiv.org/abs/2603.11029" },
-        { label: "FORC 2026", url: "https://arxiv.org/abs/2603.11029" },
+        { label: "FORC 2026",        url: "https://arxiv.org/abs/2603.11029" },
       ],
       tag: "Upcoming",
     },
     {
-      title: "Refereed Learning.",
+      title:   "Refereed Learning.",
       authors: "Ran Canetti, Ephraim Linder, SELF.",
-      venue: "Manuscript, October 2025.",
+      venue:   "Manuscript, October 2025.",
       links: [
         { label: "arXiv:2510.05440", url: "https://doi.org/10.48550/arXiv.2510.05440" },
       ],
     },
     {
-      title: "Time-Aware Projections: Truly Node-Private Graph Statistics under Continual Observation.",
+      title:   "Time-Aware Projections: Truly Node-Private Graph Statistics under Continual Observation.",
       authors: "Palak Jain, Adam Smith, SELF.",
-      venue: "Presented at IEEE S&P (Oakland), May 2024.",
+      venue:   "Presented at IEEE S&P (Oakland), May 2024.",
       venueLinks: [
         { text: "IEEE S&P (Oakland)", url: "https://doi.ieeecomputersociety.org/10.1109/SP54263.2024.00196" },
       ],
@@ -213,9 +249,9 @@ const SITE = {
       ],
     },
     {
-      title: "Widespread Underestimation of Sensitivity in Differentially Private Libraries and How to Fix It.",
+      title:   "Widespread Underestimation of Sensitivity in Differentially Private Libraries and How to Fix It.",
       authors: "Sílvia Casacuberta, Michael Shoemate, Salil Vadhan, SELF.",
-      venue: "Presented at ACM CCS 2022 and TPDP 2022 (selected for a spotlight talk).",
+      venue:   "Presented at ACM CCS 2022 and TPDP 2022 (selected for a spotlight talk).",
       venueLinks: [
         { text: "ACM CCS 2022",   url: "https://doi.org/10.1145/3548606.3560708" },
         { text: "spotlight talk", url: "https://slideslive.com/38988151/widespread-underestimation-of-sensitivities-in-differentially-private-libraries" },
@@ -227,9 +263,9 @@ const SITE = {
       ],
     },
     {
-      title: "Finite-Precision Arithmetic Isn't Real: The Impact of Finite Data Types on Efforts to Fulfill Differential Privacy on Computers.",
+      title:   "Finite-Precision Arithmetic Isn't Real: The Impact of Finite Data Types on Efforts to Fulfill Differential Privacy on Computers.",
       authors: "SELF.",
-      venue: "Senior thesis, Harvard University (highest honors). Advised by Professor Salil Vadhan.",
+      venue:   "Senior thesis, Harvard University (highest honors). Advised by Professor Salil Vadhan.",
     },
   ],
 
@@ -247,14 +283,14 @@ const SITE = {
 
 function esc(str) {
   return String(str)
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;");
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 function linkifyVenue(text, venueLinks) {
   if (!venueLinks || !venueLinks.length) return esc(text);
   let result = esc(text);
-  for (const {text: t, url} of venueLinks) {
+  for (const { text: t, url } of venueLinks) {
     const escaped = esc(t);
     result = result.replace(escaped,
       `<a href="${esc(url)}" target="_blank">${escaped}</a>`);
@@ -272,6 +308,26 @@ function render() {
   ).join("");
 
   const bioHTML = s.bio.map(p => `<p>${p.trim()}</p>`).join("\n");
+
+  // News: first item always visible, rest collapsible
+  const [firstNews, ...restNews] = s.news || [];
+  const newsFirstHTML = firstNews
+    ? `<li><strong>${esc(firstNews.date)}.</strong> ${esc(firstNews.text)}</li>`
+    : "";
+  const newsRestHTML = restNews.map(n =>
+    `<li><strong>${esc(n.date)}.</strong> ${esc(n.text)}</li>`
+  ).join("\n");
+  const newsSection = (s.news && s.news.length) ? `
+    <section class="news">
+      <div class="news-header">
+        <div class="section-label">News</div>
+        <button class="news-toggle" id="news-toggle" aria-expanded="true">collapse ▲</button>
+      </div>
+      <ul class="news-list">${newsFirstHTML}</ul>
+      <div class="news-rest-wrap" id="news-rest-wrap">
+        <ul class="news-rest-list">${newsRestHTML}</ul>
+      </div>
+    </section>` : "";
 
   const papersHTML = s.papers.map(p => {
     const authorsHTML = esc(p.authors).replace(esc("SELF"),
@@ -304,9 +360,9 @@ function render() {
   root.innerHTML = `
     <header class="header">
       <img id="profile-photo" class="header-photo"
-          src="${esc(s.photoHires)}"
-          data-lores="${esc(s.photo)}"
-          alt="${esc(myName)}">
+           src="${esc(s.photoHires)}"
+           data-lores="${esc(s.photo)}"
+           alt="${esc(myName)}">
       <div class="header-text">
         <h1>${esc(myName)}</h1>
         <p class="header-email">${esc(s.email)}</p>
@@ -314,6 +370,8 @@ function render() {
     </header>
 
     <section class="bio">${bioHTML}</section>
+
+    ${newsSection}
 
     <section class="papers">
       <div class="section-label">Research</div>
@@ -332,17 +390,52 @@ function render() {
 
     <footer>${esc(myName)} &middot; Boston University</footer>
   `;
+
+  // News toggle
+  const wrap = document.getElementById("news-rest-wrap");
+  const btn  = document.getElementById("news-toggle");
+  if (wrap && btn) {
+    let expanded = true;
+    // Set initial height so the CSS transition has something to work with
+    wrap.style.height  = wrap.scrollHeight + "px";
+    wrap.style.opacity = "1";
+
+    btn.addEventListener("click", () => {
+      if (expanded) {
+        // Lock in the current pixel height, then transition to 0
+        wrap.style.height  = wrap.scrollHeight + "px";
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          wrap.style.height  = "0px";
+          wrap.style.opacity = "0";
+        }));
+        btn.textContent        = "expand ▼";
+        btn.setAttribute("aria-expanded", "false");
+      } else {
+        wrap.style.height  = wrap.scrollHeight + "px";
+        wrap.style.opacity = "1";
+        wrap.addEventListener("transitionend", function once() {
+          wrap.style.height = "auto";
+          wrap.removeEventListener("transitionend", once);
+        });
+        btn.textContent        = "collapse ▲";
+        btn.setAttribute("aria-expanded", "true");
+      }
+      expanded = !expanded;
+    });
+  }
+
+  // Blur-up photo load
+  const photoEl = document.getElementById("profile-photo");
+  if (photoEl && photoEl.dataset.lores) {
+    const hires = photoEl.src;
+    photoEl.src = photoEl.dataset.lores;
+    const img = new Image();
+    img.src = hires;
+    img.onload = () => { photoEl.src = hires; };
+  }
 }
 
 render();
-
-const el = document.getElementById('profile-photo');
-const hi = el.src;
-const lo = el.dataset.lores;
-if (lo) el.src = lo;
-const img = new Image();
-img.src = hi;
-img.onload = () => { el.src = hi; };
 </script>
 </body>
 </html>
