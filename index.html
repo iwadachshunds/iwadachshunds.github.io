@@ -98,6 +98,8 @@
     .news-rest-list { list-style: disc; padding-left: 1.3em; margin: 0; }
     .news-rest-list li { color: var(--ink-mid); font-size: 0.93rem; padding: 3px 0; }
     .news-rest-list li strong { font-weight: 600; color: var(--ink-mid); }
+    .news-list a, .news-rest-list a { color: var(--accent-dim); text-decoration: none; }
+    .news-list a:hover, .news-rest-list a:hover { text-decoration: underline; }
 
     /* ── Papers ── */
     .papers { margin-bottom: 36px; }
@@ -194,7 +196,8 @@ const SITE = {
   ],
 
   news: [
-    { date: "July 2026",     text: `"Local Node Differential Privacy" will appear at FOCS 2026! 🕺🪩💃`},
+    { date: "July 2026",     text: `"Local Node Differential Privacy" will appear at FOCS 2026! 🕺🪩💃 (Watch my Google talk for a preview.)`,
+      links: [ { text: "my Google talk", url: "https://www.youtube.com/watch?v=tCgM4XGvHvY" } ] },
     { date: "May 2026",      text: `This summer I'll be a research intern at Amazon in Santa Clara, working with Shiva Kasiviswanathan.` },
     { date: "April 2026",    text: `Talk at Google on "Local Node Differential Privacy".` },
     { date: "April 2026",    text: `Two papers accepted to TPDP ("Local Node Differential Privacy" and "Separating Oblivious and Adaptive...").` },
@@ -318,10 +321,10 @@ function render() {
   // News: first item always visible, rest collapsible
   const [firstNews, ...restNews] = s.news || [];
   const newsFirstHTML = firstNews
-    ? `<li><strong>${esc(firstNews.date)}.</strong> ${esc(firstNews.text)}</li>`
+    ? `<li><strong>${esc(firstNews.date)}.</strong> ${linkifyVenue(firstNews.text, firstNews.links)}</li>`
     : "";
   const newsRestHTML = restNews.map(n =>
-    `<li><strong>${esc(n.date)}.</strong> ${esc(n.text)}</li>`
+    `<li><strong>${esc(n.date)}.</strong> ${linkifyVenue(n.text, n.links)}</li>`
   ).join("\n");
   const newsSection = (s.news && s.news.length) ? `
     <section class="news">
