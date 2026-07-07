@@ -196,7 +196,7 @@ const SITE = {
   ],
 
   news: [
-    { date: "July 2026",     text: `"Local Node Differential Privacy" will appear at FOCS 2026! 🕺🪩💃 (Watch my Google talk for an overview of our work.)`,
+    { date: "July 2026",     text: `"Local Node Differential Privacy" will appear at FOCS 2026! 🕺🪩💃\n(Watch my Google talk for a preview.)`,
       links: [ { text: "my Google talk", url: "https://www.youtube.com/watch?v=tCgM4XGvHvY" } ] },
     { date: "May 2026",      text: `This summer I'll be a research intern at Amazon in Santa Clara, working with Shiva Kasiviswanathan.` },
     { date: "April 2026",    text: `Talk at Google on "Local Node Differential Privacy".` },
@@ -297,8 +297,8 @@ function esc(str) {
 }
 
 function linkifyVenue(text, venueLinks) {
-  if (!venueLinks || !venueLinks.length) return esc(text);
-  let result = esc(text);
+  if (!venueLinks || !venueLinks.length) return esc(text).replace(/\n/g, "<br>");
+  let result = esc(text).replace(/\n/g, "<br>");
   for (const { text: t, url } of venueLinks) {
     const escaped = esc(t);
     result = result.replace(escaped,
